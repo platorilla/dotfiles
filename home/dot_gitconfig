@@ -12,6 +12,33 @@
 [core]
     sshCommand = ssh -i ~/.ssh/id_rsa.ginolatorilla
 
+# Company overrides
+[url "git@github.com:itrs-group"]
+    insteadOf = https://github.com/itrs-group
+
+# insteadOf is case-sensitive. The organisation also appears as ITRS-Group.
+[url "git@github.com:ITRS-Group"]
+    insteadOf = https://github.com/ITRS-Group
+
+# Use the work key for company remotes in any directory, for example in the Go
+# module cache. The URL patterns are case-sensitive, so list both spellings.
+[includeIf "hasconfig:remote.*.url:https://github.com/itrs-group/**"]
+    path = ~/.gitconfig.itrs
+[includeIf "hasconfig:remote.*.url:https://github.com/ITRS-Group/**"]
+    path = ~/.gitconfig.itrs
+[includeIf "hasconfig:remote.*.url:git@github.com:itrs-group/**"]
+    path = ~/.gitconfig.itrs
+[includeIf "hasconfig:remote.*.url:git@github.com:ITRS-Group/**"]
+    path = ~/.gitconfig.itrs
+[includeIf "hasconfig:remote.*.url:git@github.com:platorilla/**"]
+    path = ~/.gitconfig.itrs
+[includeIf "hasconfig:remote.*.url:https://github.com/platorilla/**"]
+    path = ~/.gitconfig.itrs
+[includeIf "gitdir:~/github.com/ITRS-Group/"]
+    path = ~/.gitconfig.itrs
+[includeIf "gitdir:~/github.com/platorilla/"]
+    path = ~/.gitconfig.itrs
+
 # Local overrides (not managed by dotfiles). Keep this include last, so that
 # its settings win.
 [include]

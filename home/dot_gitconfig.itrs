@@ -1,0 +1,15 @@
+# Not tracked. Selects the work ssh key for repos of the company organisation.
+# ~/.gitconfig.local includes this file when a remote URL names the organisation.
+[user]
+    name = Gino Latorilla
+    email = platorilla@itrsgroup.com
+    signingkey = 500B58F234A8274A
+
+[commit]
+    gpgsign = true
+
+[init]
+    defaultBranch = main
+
+[core]
+    sshCommand = ssh -i ~/.ssh/id_ed25519

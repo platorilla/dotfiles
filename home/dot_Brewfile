@@ -371,6 +371,12 @@ krew "tree"
 krew "view-secret"
 
 # ---------------------------------------------------------------------------
+# Company-sourced packages
+# ---------------------------------------------------------------------------
+go "github.com/itrs-group/iax-archangel/cmd/archangel"
+go "github.com/itrs-group/ptk"
+
+# ---------------------------------------------------------------------------
 # Local override: Private Packages for this Machine (not tracked)
 # ---------------------------------------------------------------------------
 local_brewfile = File.join(Dir.home, ".Brewfile.local")
